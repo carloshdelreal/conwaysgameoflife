@@ -17,7 +17,6 @@
     "test:validate": "react-scripts test -i tests/grid.test.js -t \"Validate Coords\"",
     "test:live": "react-scripts test -i tests/grid.test.js -t \"live or dies\"",
     "test:grid": "react-scripts test -i tests/grid.test.js -t \"Grid nextGen Tests\"",
-
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
