@@ -30,18 +30,17 @@ const gridLife = gridArray => {
     return grid[xValid][yValid];
   };
 
-  const getSurroundingValues = (x, y) => {
-    return [
-      getCellValue(x - 1, y - 1),
-      getCellValue(x - 1, y),
-      getCellValue(x - 1, y + 1),
-      getCellValue(x, y - 1),
-      getCellValue(x, y + 1),
-      getCellValue(x + 1, y - 1),
-      getCellValue(x + 1, y),
-      getCellValue(x + 1, y + 1),
-    ];
-  };
+  const getSurroundingValues = (x, y) => [
+    getCellValue(x - 1, y - 1),
+    getCellValue(x - 1, y),
+    getCellValue(x - 1, y + 1),
+    getCellValue(x, y - 1),
+    getCellValue(x, y + 1),
+    getCellValue(x + 1, y - 1),
+    getCellValue(x + 1, y),
+    getCellValue(x + 1, y + 1),
+  ];
+
   const countSurroundingLives = (x, y) => {
     const values = getSurroundingValues(x, y);
     let counter = 0;
@@ -70,7 +69,9 @@ const gridLife = gridArray => {
   };
 
   const genNext = () => {
-    const newGrid = Array(width).fill().map(() => Array(height));
+    const newGrid = Array(width)
+      .fill()
+      .map(() => Array(height));
     for (let x = 0; x < width; x += 1) {
       for (let y = 0; y < height; y += 1) {
         newGrid[x][y] = liveOrDies(x, y);
