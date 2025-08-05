@@ -1,7 +1,7 @@
 import React from 'react';
-import Cell from '../components/cell'
+import Cell from '../components/cell';
 
-const Grid = ({grid, handleCellClick}) => {
+const Grid = ({ grid, handleCellClick }) => {
   return (
     <div>
       { grid.map((row, rowIndex, arrayobj) => {

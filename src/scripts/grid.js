@@ -30,18 +30,17 @@ const gridLife = gridArray => {
     return grid[xValid][yValid];
   };
 
-  const getSurroundingValues = (x, y) => {
-    return [
-      getCellValue(x - 1, y - 1),
-      getCellValue(x - 1, y),
-      getCellValue(x - 1, y + 1),
-      getCellValue(x, y - 1),
-      getCellValue(x, y + 1),
-      getCellValue(x + 1, y - 1),
-      getCellValue(x + 1, y),
-      getCellValue(x + 1, y + 1),
-    ];
-  };
+  const getSurroundingValues = (x, y) => [
+    getCellValue(x - 1, y - 1),
+    getCellValue(x - 1, y),
+    getCellValue(x - 1, y + 1),
+    getCellValue(x, y - 1),
+    getCellValue(x, y + 1),
+    getCellValue(x + 1, y - 1),
+    getCellValue(x + 1, y),
+    getCellValue(x + 1, y + 1),
+  ];
+
   const countSurroundingLives = (x, y) => {
     const values = getSurroundingValues(x, y);
     let counter = 0;

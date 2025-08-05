@@ -6,11 +6,7 @@ function App() {
   const width = 50;
   const height = 200;
 
-  const [grid, setGrid] = useState(() => {
-    return Array(width).fill(null).map(() => 
-      Array(height).fill(null).map(() => Math.random() < 0.3 ? 1 : 0)
-    );
-  });
+  const [grid, setGrid] = useState(() => Array(width).fill(null).map(() => Array(height).fill(null).map(() => (Math.random() < 0.3 ? 1 : 0))));
   const [playing, setPlaying] = useState(false);
 
   const handleCellClick = (x, y) => {
