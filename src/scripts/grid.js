@@ -69,7 +69,9 @@ const gridLife = gridArray => {
   };
 
   const genNext = () => {
-    const newGrid = Array(width).fill().map(() => Array(height));
+    const newGrid = Array(width)
+      .fill()
+      .map(() => Array(height));
     for (let x = 0; x < width; x += 1) {
       for (let y = 0; y < height; y += 1) {
         newGrid[x][y] = liveOrDies(x, y);

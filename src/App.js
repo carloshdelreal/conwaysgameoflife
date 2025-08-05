@@ -6,7 +6,15 @@ function App() {
   const width = 50;
   const height = 200;
 
-  const [grid, setGrid] = useState(() => Array(width).fill(null).map(() => Array(height).fill(null).map(() => (Math.random() < 0.3 ? 1 : 0))));
+  const [grid, setGrid] = useState(() =>
+    Array(width)
+      .fill(null)
+      .map(() =>
+        Array(height)
+          .fill(null)
+          .map(() => (Math.random() < 0.3 ? 1 : 0))
+      )
+  );
   const [playing, setPlaying] = useState(false);
 
   const handleCellClick = (x, y) => {
@@ -46,16 +54,20 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Conways Game of Life</h1>
-        <p>
-          by Carlos Del Real
-        </p>
+        <p>by Carlos Del Real</p>
       </header>
       <main>
         <Grid grid={grid} handleCellClick={handleCellClick} />
-        { playing ? <div>Playing !!</div> : null }
-        { playing
-          ? <button type="button" onClick={() => play()}>Stop</button>
-          : <button type="button" onClick={() => play()}>Play</button>}
+        {playing ? <div>Playing !!</div> : null}
+        {playing ? (
+          <button type="button" onClick={() => play()}>
+            Stop
+          </button>
+        ) : (
+          <button type="button" onClick={() => play()}>
+            Play
+          </button>
+        )}
       </main>
     </div>
   );
